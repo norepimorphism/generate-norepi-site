@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: MPL-2.0
+
+[package]
+name = "generate-norepi-site"
+version = "0.1.0"
+edition = "2021"
+license = "MPL-2.0"
+
+[dependencies]
+minify-html = "0.9"
+sailfish = "0.4"
