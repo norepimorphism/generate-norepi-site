@@ -1,6 +1,6 @@
 <div id="canvas-container">
-    <div id="drop-zone" ondragover="return false" ondragend="return false">
-        <p>Drag and drop a PlayStation BIOS image here!</p>
+    <div id="drop-zone" class="button-like" ondragover="event.preventDefault()">
+        Drag and drop a PlayStation BIOS image here!
     </div>
 </div>
-<script type="module">import init from "./noctane/wasm.js";init();</script>
+<script type="module">import init,{run} from "./noctane/wasm.js";init().then(()=>{run()});</script>

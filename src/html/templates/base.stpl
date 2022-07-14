@@ -6,7 +6,9 @@
         <meta name="author" content="norepimorphism">
         <meta name="theme-color" content="#6842f4">
         <meta name="color-scheme" content="dark">
-        <script src="coi-serviceworker.min.js"></script>
+        <% for script in scripts { %>
+            <script src="<%= script %>"></script>
+        <% } %>
         <% for stylesheet in stylesheets { %>
             <link rel="stylesheet" href="<%= stylesheet %>">
         <% } %>
@@ -19,6 +21,6 @@
             <%- main %>
         </main>
         <hr>
-        <footer>Contact me at <address style="display: inline"><pre style="display: inline">&lt;the title of this webpage&gt;</pre>@protonmail.com</address>.</footer>
+        <footer>Contact me at <address style="display: inline"><pre style="display: inline">&lt;the first six letters of this website's author&gt;</pre>@protonmail.com</address>.</footer>
     </body>
 </html>

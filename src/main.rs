@@ -4,6 +4,7 @@ use sailfish::TemplateOnce;
 #[template(path = "base.stpl")]
 struct Base {
     title: &'static str,
+    scripts: &'static [&'static str],
     stylesheets: &'static [&'static str],
     main: &'static str,
 }
@@ -39,6 +40,7 @@ fn generate_page(filename: &str, template: Base) {
 fn index_template() -> Base {
     Base {
         title: "norepi's Personal Site",
+        scripts: &[],
         stylesheets: &["/base.css"],
         main: include_str!("html/fragments/index-main.html"),
     }
@@ -47,7 +49,8 @@ fn index_template() -> Base {
 fn noctane_template() -> Base {
     Base {
         title: "Noctane for Web",
-        stylesheets: &["/base.css", "/noctane/style.css"],
+        scripts: &["/coi-serviceworker.min.js"],
+        stylesheets: &["/base.css"],
         main: include_str!("html/fragments/noctane-main.html"),
     }
 }
